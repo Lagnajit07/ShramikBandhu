@@ -14,6 +14,16 @@ import bcrypt
 import jwt
 from enum import Enum
 
+import certifi
+import motor.motor_asyncio
+
+MONGO_URI = "mongodb+srv://LS:ls444777@lhs.1exivez.mongodb.net/?appName=LHS&tls=true"
+
+# use certifi's CA file so TLS/SSL handshake uses correct certs
+client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_URI, tlsCAFile=certifi.where())
+db = client["lhs"]
+
+
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 

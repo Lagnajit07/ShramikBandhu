@@ -13,7 +13,7 @@ const LandingPage = ({ user }) => {
           <div className="nav-content">
             <div className="logo">
               <Users className="logo-icon" />
-              <span>LaborSync</span>
+              <span>ShramikBandhu</span>
             </div>
             <div className="nav-buttons">
               {user ? (
@@ -71,7 +71,7 @@ const LandingPage = ({ user }) => {
 
       {/* Features Section */}
       <section className="features-section">
-        <h2 className="section-title">Why LaborSync?</h2>
+        <h2 className="section-title">Why ShramikBandhu?</h2>
         <div className="features-grid">
           <div className="feature-card" data-testid="feature-inclusive">
             <div className="feature-icon">
@@ -144,7 +144,7 @@ const LandingPage = ({ user }) => {
       {/* CTA Section */}
       <section className="cta-section">
         <h2 className="cta-title">Ready to Get Started?</h2>
-        <p className="cta-subtitle">Join thousands of workers and employers already using LaborSync</p>
+        <p className="cta-subtitle">Join thousands of workers and employers already using ShramikBandhu</p>
         <Button
           data-testid="cta-join-btn"
           onClick={() => navigate('/auth')}
@@ -157,7 +157,7 @@ const LandingPage = ({ user }) => {
 
       {/* Footer */}
       <footer className="footer">
-        <p>&copy; 2024 LaborSync. Empowering India's workforce.</p>
+        <p>&copy; 2025 ShramikBandhu. Empowering India's workforce.</p>
       </footer>
     </div>
   );

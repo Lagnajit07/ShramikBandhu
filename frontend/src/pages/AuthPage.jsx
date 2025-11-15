@@ -63,7 +63,7 @@ const AuthPage = ({ onLogin }) => {
         <div className="auth-header">
           <div className="auth-logo">
             <Users className="auth-logo-icon" />
-            <span>LaborSync</span>
+            <span>ShramikBandhu</span>
           </div>
           <h1 className="auth-title" data-testid="auth-title">Welcome Back</h1>
           <p className="auth-subtitle">Sign in to your account or create a new one</p>

@@ -317,6 +317,8 @@ code {
 .feature-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  background: hsl(var(--primary));
+  color: white;
 }
 
 .feature-icon {
@@ -336,11 +338,11 @@ code {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #1a202c;
+  /* color: #1a202c; */
 }
 
 .feature-card p {
-  color: #4a5568;
+  /* color: #4a5568; */
   line-height: 1.6;
 }
 
@@ -435,6 +437,8 @@ code {
 .cta-button:hover {
   transform: scale(1.05);
   box-shadow: 0 12px 24px rgba(255, 255, 255, 0.3);
+  background: hsl(var(--primary));
+  color: white;
 }
 
 .footer {

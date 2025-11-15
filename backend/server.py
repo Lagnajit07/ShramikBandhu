@@ -17,10 +17,10 @@ from enum import Enum
 import certifi
 import motor.motor_asyncio
 
-MONGO_URI = "mongodb+srv://LS:ls444777@lhs.1exivez.mongodb.net/?appName=LHS&tls=true"
+MONGO_URL = os.getenv("MONGO_URL")
 
 # use certifi's CA file so TLS/SSL handshake uses correct certs
-client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_URI, tlsCAFile=certifi.where())
+client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_URL, tlsCAFile=certifi.where())
 db = client["lhs"]
 
 
@@ -642,7 +642,8 @@ app.include_router(api_router)
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
-    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
+    allow_origins=["https://shramikbandhu-hrzp.onrender.com"],
+    # allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )

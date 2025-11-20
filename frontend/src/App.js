@@ -2,17 +2,21 @@ import { useState, useEffect } from "react";
 import "@/App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import axios from "axios";
+
 import LandingPage from "./pages/LandingPage";
 import AuthPage from "./pages/AuthPage";
 import WorkerDashboard from "./pages/WorkerDashboard";
 import EmployerDashboard from "./pages/EmployerDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import Navbar from "./components/Navbar";
 import { Toaster } from "./components/ui/sonner";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 export const API = `${BACKEND_URL}/api`;
 
-// Set axios default headers
+// Axios Setup
 axios.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
@@ -31,9 +35,11 @@ function App() {
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     const token = localStorage.getItem("token");
+
     if (storedUser && token) {
       setUser(JSON.parse(storedUser));
     }
+
     setLoading(false);
   }, []);
 
@@ -57,8 +63,12 @@ function App() {
     <div className="App">
       <Toaster position="top-right" richColors />
       <BrowserRouter>
+        {/* 🟢 Navbar added globally */}
+        <Navbar />
+
         <Routes>
           <Route path="/" element={<LandingPage user={user} />} />
+
           <Route
             path="/auth"
             element={
@@ -69,6 +79,7 @@ function App() {
               )
             }
           />
+
           <Route
             path="/worker-dashboard"
             element={
@@ -79,6 +90,7 @@ function App() {
               )
             }
           />
+
           <Route
             path="/employer-dashboard"
             element={
@@ -89,6 +101,7 @@ function App() {
               )
             }
           />
+
           <Route
             path="/admin-dashboard"
             element={
@@ -99,6 +112,10 @@ function App() {
               )
             }
           />
+
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+
         </Routes>
       </BrowserRouter>
     </div>

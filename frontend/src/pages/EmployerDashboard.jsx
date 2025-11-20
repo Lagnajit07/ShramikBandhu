@@ -12,6 +12,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { toast } from 'sonner';
 import { LogOut, Briefcase, User, Star, MapPin, Calendar, IndianRupee, Users, Phone, CheckCircle } from 'lucide-react';
 
+
 const EmployerDashboard = ({ user, onLogout }) => {
   const [profile, setProfile] = useState(null);
   const [jobs, setJobs] = useState([]);

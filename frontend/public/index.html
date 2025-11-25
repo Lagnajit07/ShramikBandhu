@@ -47,56 +47,83 @@
     </script>
   </head>
 
-  <body>
     <div class="w-full max-w-full">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
-    <!-- SharamikBandhu Badge -->
-    <a
-      id="shramikbandhu-badge"
-      target="_blank"
-      href="https://www.linkedin.com/in/lagnajit-khuntia-a42373314/"
+    <!-- Neon Glow Badge -->
+<a
+  id="shramikbandhu-badge"
+  target="_blank"
+  href="https://www.linkedin.com/in/lagnajit-khuntia-a42373314/"
+  style="
+    display: flex !important;
+    align-items: center !important;
+    position: fixed !important;
+    bottom: 20px;
+    right: 20px;
+    text-decoration: none;
+    padding: 8px 12px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    font-size: 12px !important;
+    z-index: 9999 !important;
+    border-radius: 10px !important;
+    background-color: #111111 !important;
+    border: 2px solid #00ffff !important;
+    color: #00ffff !important;
+    box-shadow:
+      0 0 5px #00ffff,
+      0 0 10px #00ffff,
+      0 0 20px #00ffff,
+      0 0 40px #00ffff;
+    animation: neonPulse 1.8s infinite alternate ease-in-out;
+  "
+>
+  <div style="display: flex; flex-direction: row; align-items: center">
+    <img
+      style="width: 22px; height: 22px; margin-right: 8px; filter: drop-shadow(0 0 8px #ff00ff)"
+      src="/image/image2.png"
+      alt="ShramikBandhu Logo"
+    />
+
+    <p
       style="
-        display: flex !important;
-        align-items: center !important;
-        position: fixed !important;
-        bottom: 20px;
-        right: 20px;
-        text-decoration: none;
-        padding: 6px 10px;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-          Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
-        font-size: 12px !important;
-        z-index: 9999 !important;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-        border-radius: 8px !important;
-        background-color: #ffffff !important;
-        border: 1px solid rgba(255, 255, 255, 0.25) !important;
+        margin-bottom: 0;
+        color: #ffffff !important;
+        text-shadow:
+          0 0 4px #d54ac5,
+          0 0 8px #73275f,
+          0 0 12px #d162e8;
       "
     >
-      <div style="display: flex; flex-direction: row; align-items: center">
-        <img
-          style="width: 20px; height: 20px; margin-right: 8px"
-          src="/image/image2.png"
-          alt="ShramikBandhu Logo"
-        />
+      Made By LS
+    </p>
+  </div>
+</a>
 
+<!-- Neon Animation -->
+<style>
+@keyframes neonPulse {
+  0% {
+    box-shadow:
+      0 0 4px #ca89e6,
+      0 0 8px #e2abdf,
+      0 0 15px #ea8ae8,
+      0 0 30px #ba82b8;
+    transform: scale(1);
+  }
+  100% {
+    box-shadow:
+      0 0 8px #ca69c4,
+      0 0 16px #bb65c7,
+      0 0 30px #e178e9,
+      0 0 60px #a655d5;
+    transform: scale(1.02);
+  }
+}
+</style>
 
-        <p
-          style="
-            color: #000000;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-              Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
-            font-size: 12px !important;
-            align-items: center;
-            margin-bottom: 0;
-          "
-        >
-          Made By LS
-        </p>
-      </div>
-    </a>
 
     <!-- Posthog Analytics -->
     <script>
@@ -145,5 +172,174 @@
       });
     </script>
     </div>
+
+
+
+    <!-- Chatbot Widget -->
+<!-- <div id="chatbot-container"> -->
+  <!-- <button id="chatbot-toggle">💬</button>
+
+  <div id="chatbot-panel">
+    <div id="chatbot-header">AI Assistant</div>
+
+    <div id="chatbot-body">
+      <div class="msg bot">Hello! How can I help you today?</div>
+    </div>
+
+    <div id="chatbot-input-area">
+      <input type="text" id="chatbot-input" placeholder="Type a message..." />
+      <button id="chatbot-send">➤</button>
+    </div>
+  </div>
+</div> -->
+
+<!-- <style>
+  #chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99999;
+  font-family: Arial, sans-serif;
+}
+
+/* Floating button */
+#chatbot-toggle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #111;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 26px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+/* Chat panel */
+#chatbot-panel {
+  width: 320px;
+  height: 430px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+#chatbot-header {
+  background: #111;
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#chatbot-body {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  background: #fafafa;
+}
+
+.msg {
+  max-width: 80%;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 10px;
+  line-height: 1.4;
+}
+
+.msg.user {
+  background: #111;
+  color: white;
+  margin-left: auto;
+}
+
+.msg.bot {
+  background: #e8e8e8;
+  color: #111;
+  margin-right: auto;
+}
+
+/* Input Area */
+#chatbot-input-area {
+  display: flex;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  background: #fff;
+} -->
+
+<!-- #chatbot-input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+#chatbot-send {
+  background: #111;
+  color: white;
+  border: none;
+  padding: 0 18px;
+  margin-left: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+</style>
+
+<script>
+  const toggleBtn = document.getElementById("chatbot-toggle");
+  const panel = document.getElementById("chatbot-panel");
+  const body = document.getElementById("chatbot-body");
+  const input = document.getElementById("chatbot-input");
+  const sendBtn = document.getElementById("chatbot-send");
+
+  // Your Python backend URL:
+  const API_URL = "http://127.0.0.1:5000/chat";  // Change this to your backend URL
+
+  toggleBtn.onclick = () => {
+    panel.style.display = panel.style.display === "flex" ? "none" : "flex";
+  };
+
+  function appendMessage(sender, text) {
+    const div = document.createElement("div");
+    div.className = "msg " + sender;
+    div.innerText = text;
+    body.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  async function sendMessage() {
+    const text = input.value.trim();
+    if (!text) return;
+
+    appendMessage("user", text);
+    input.value = "";
+
+    try {
+      const res = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text })
+      });
+
+      const data = await res.json();
+      appendMessage("bot", data.reply || "I could not process that.");
+    } catch (err) {
+      appendMessage("bot", "Server error. Try again later.");
+    }
+  }
+
+  sendBtn.onclick = sendMessage;
+  input.addEventListener("keypress", e => {
+    if (e.key === "Enter") sendMessage();
+  });
+</script> -->
+
+
   </body>
 </html>

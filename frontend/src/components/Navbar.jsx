@@ -4,7 +4,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-800 text-white px-4 py-3 flex items-center justify-between relative">
+    <nav className="bg-gray-800 text-white px-4 py-3 flex items-center justify-between relative sticky top-0 z-50">
       {/* Logo */}
       <div className="text-lg font-bold">
         <a href="/" className="flex items-center space-x-2">
